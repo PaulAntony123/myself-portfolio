@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAUL ANTONY</title>
+    <meta name="description" content="A Minecraft-inspired responsive portfolio website">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+</head>
+
+<body class="theme-day">
+    <!-- Minecraft Loading Screen -->
+    <div id="loading-screen">
+        <!-- Floating particles -->
+        <div class="loading-particles">
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="loading-content">
+            <!-- Spinning 3D Grass Block -->
+            <div class="loading-block">
+                <div class="block-face block-top"></div>
+                <div class="block-face block-front"></div>
+                <div class="block-face block-right"></div>
+                <div class="block-face block-back"></div>
+                <div class="block-face block-left"></div>
+                <div class="block-face block-bottom"></div>
+            </div>
+            <h2 class="loading-title">Loading World<span class="loading-dots"></span></h2>
+            <div class="loading-bar-container">
+                <div class="loading-bar-fill"></div>
+                <span class="loading-percentage">0%</span>
+            </div>
+            <p class="loading-subtitle">Building terrain...</p>
+            <p class="loading-tip">💡 Tip: Type "minecraft" for a surprise!</p>
+        </div>
+    </div>
+
+    <!-- Nether Portal Transition Overlay -->
+    <div id="portal-overlay"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <a href="#hero" class="logo">MC_PORTFOLIO</a>
+        <div class="nav-links" id="nav-links">
+            <h2 class="mobile-menu-title">Game Paused</h2>
+            <a href="#about" class="nav-item">About</a>
+            <a href="#experience" class="nav-item">Experience</a>
+            <a href="#projects" class="nav-item">Projects</a>
+            <a href="#gallery" class="nav-item">Gallery</a>
+            <a href="#contact" class="nav-item">Contact</a>
+        </div>
+        <div style="display: flex; gap: 15px; align-items: center;">
+            <button id="theme-toggle" class="mc-button" style="padding: 5px 10px; font-size: 1.2rem;"
+                aria-label="Toggle Theme">🌙</button>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-bg-container">
+            <div class="hero-bg" id="hero-bg"></div>
+        </div>
+        <canvas id="particles-canvas"></canvas>
+        <div class="hero-content fade-in-up">
+            <h1 class="hero-title">Paul Antony</h1>
+            <p class="hero-subtitle" id="typewriter-text" data-text="ECE Student | Tech Enthusiast | Web Developer">
+                &nbsp;</p>
+            <a href="#projects" class="btn btn-primary mc-button">
+                <span>Explore Builds</span>
+                <div class="btn-glint"></div>
+            </a>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <p></p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container reveal">
+            <h2 class="section-title">Inventory <span class="subtitle">(About Me)</span></h2>
+            <div class="about-content grid">
+                <div class="about-text glass-card hover-glow">
+                    <!-- Place your profile photo link in the src below -->
+                    <img src="paulantony.jpeg" alt="Paul Antony" class="profile-photo">
+                    <h3>Hello, I'm Paul!</h3>
+                    <p>I am a second-year Electronics and Communication Engineering student with a strong interest in
+                        technology and innovation. I enjoy exploring programming, web development, and UI design.</p>
+                    <p>I serve as the Technical Coordinator of my IEEE Student Branch, organizing events and working on
+                        the design team. I love exploring new technologies and solving real-world problems!</p>
+                    <a href="#" class="btn btn-secondary mc-button" style="margin-top: 1.5rem; display: inline-block;">
+                        <span>📄 Download Resume</span>
+                        <div class="btn-glint"></div>
+                    </a>
+                </div>
+                <div class="skills-container glass-card hover-glow">
+                    <h3>Skills</h3>
+                    <ul class="skills-list">
+                        <li><span class="skill-name">Python & C</span>
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 85%;"></div>
+                            </div>
+                        </li>
+                        <li><span class="skill-name">HTML/CSS/JS</span>
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 90%;"></div>
+                            </div>
+                        </li>
+                        <li><span class="skill-name">SQL</span>
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 70%;"></div>
+                            </div>
+                        </li>
+                        <li><span class="skill-name">Arduino</span>
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 75%;"></div>
+                            </div>
+                        </li>
+                        <li><span class="skill-name">Canva & Figma</span>
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 80%;"></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section experience pattern-bg">
+        <div class="container reveal">
+            <h2 class="section-title">My Experience <span class="subtitle">(Roles & Contributions)</span></h2>
+            <div class="experience-grid grid">
+                <!-- Experience Card 1 -->
+                <div class="project-card glass-card hover-glow">
+                    <div class="project-img bg-stone">
+                        <img src="paul.jpg" alt="tech lead" style="width:100%;height:100%;object-fit:cover;">
+                        <div class="project-overlay">
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Technical Coordinator</h3>
+                        <div class="tech-tags">
+                            <span class="mc-tag">Leadership</span>
+                            <span class="mc-tag">Event Management</span>
+                        </div>
+                        <p>Organizing technical events, workshops, and digital initiatives for the IEEE Student Branch.
+                        </p>
+                    </div>
+                </div>
+                <!-- Experience Card 2 -->
+                <div class="project-card glass-card hover-glow" style="transition-delay: 100ms;">
+                    <div class="project-img bg-diamond">
+                        <img src="paul nasa.jpg" alt="nasa" style="width:100%;height:100%;object-fit:cover;">
+                        <div class="project-overlay">
+                            <a href="javascript:void(0)" id="view-certificates-btn"
+                                class="btn btn-secondary mc-button">View</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Space Apps & Bootcamps</h3>
+                        <div class="tech-tags">
+                            <span class="mc-tag">Problem Solving</span>
+                            <span class="mc-tag">Innovation</span>
+                        </div>
+                        <p>Participated in the NASA International Space Apps Challenge and various technical bootcamps.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects pattern-bg">
+        <div class="container reveal">
+            <h2 class="section-title">My Builds <span class="subtitle">(Portfolio Projects)</span></h2>
+            <div class="projects-grid grid">
+                <!-- Project Card 1 -->
+                <div class="project-card glass-card hover-glow">
+                    <div class="project-img">
+                        <img src="ieeewebsite.png" alt="IEEE Student Branch Website"
+                            style="width:100%;height:100%;object-fit:cover;">
+                        <div class="project-overlay">
+                            <a href="https://visatieeesb-gray.vercel.app/" target="_blank"
+                                class="btn btn-secondary mc-button">View</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>IEEE Student Branch Website</h3>
+                        <div class="tech-tags">
+                            <span class="mc-tag">HTML</span>
+                            <span class="mc-tag">CSS</span>
+                            <span class="mc-tag">JavaScript</span>
+                        </div>
+                        <p>Developed responsive web pages and collaborated with a team to build the official branch
+                            website.</p>
+                    </div>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="project-card glass-card hover-glow" style="transition-delay: 100ms;">
+                    <div class="project-img bg-stone">
+                        <img src="Reactpad.png" alt="React Pad" style="width:100%;height:100%;object-fit:cover;">
+                        <div class="project-overlay">
+                            <a href="https://paulantony123.github.io/effect-pad/" target="_blank"
+                                class="btn btn-secondary mc-button">View</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>React Pad</h3>
+                        <div class="tech-tags">
+                            <span class="mc-tag">HTML</span>
+                            <span class="mc-tag">CSS</span>
+                            <span class="mc-tag">JavaScript</span>
+                        </div>
+                        <p>React Pad is a simple soundboard website where you can play sounds using pads or your
+                            keyboard—fun, fast, and interactive</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section 
+    <section id="gallery" class="section gallery">
+        <div class="container reveal">
+            <h2 class="section-title">Screenshots <span class="subtitle">(Gallery)</span></h2>
+            <div class="gallery-grid">
+                <div class="gallery-item glass-card hover-glow bg-grass" style="transition-delay: 0ms;"></div>
+                <div class="gallery-item glass-card hover-glow bg-lapis" style="transition-delay: 100ms;"></div>
+                <div class="gallery-item glass-card hover-glow bg-obsidian" style="transition-delay: 200ms;"></div>
+                <div class="gallery-item glass-card hover-glow bg-gold" style="transition-delay: 300ms;"></div>
+            </div>
+        </div>
+    </section>
+-->
+    <!-- Contact Section -->
+    <section id="contact" class="section contact pattern-bg">
+        <div class="container reveal">
+            <h2 class="section-title">Send a Message <span class="subtitle">(Contact)</span></h2>
+            <div class="contact-card glass-card no-tilt">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" required class="pixel-input mc-focus">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" required class="pixel-input mc-focus">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="5" required class="pixel-input mc-focus"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary mc-button">
+                        <span>Send via Pigeon</span>
+                        <div class="btn-glint"></div>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <button id="back-to-top" class="mc-button" aria-label="Back to top">▲</button>
+
+    <!-- Footer -->
+    <footer class="footer glass-card">
+        <div class="footer-content">
+            <a href="#hero" class="logo">MC_PORTFOLIO</a>
+            <p>&copy; 2026 Crafted pixel by pixel.</p>
+            <div class="social-links">
+                <a href="[EMAIL_ADDRESS]" class="btn btn-icon mc-button">Gmail</a>
+                <a href="https://github.com/PaulAntony123" class="btn btn-icon mc-button">GitHub</a>
+                <a href="https://www.linkedin.com/in/paul-antony-4498ab3a5" class="btn btn-icon mc-button">Linkedin</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Advancement Popup -->
+    <div id="advancement-toast" class="advancement-toast">
+        <div class="advancement-icon"></div>
+        <div class="advancement-text">
+            <h4>Advancement Made!</h4>
+            <p id="advancement-desc"></p>
+        </div>
+    </div>
+
+    <!-- Easter Egg Creeper -->
+    <div id="creeper-easter-egg">
+        <div class="creeper-eyes"></div>
+        <div class="creeper-mouth"></div>
+    </div>
+
+    <!-- Certificates Modal -->
+    <div id="certificates-modal" class="modal">
+        <div class="modal-content glass-card no-tilt">
+            <div class="modal-header">
+                <h2 class="section-title" style="margin-bottom: 0;">My Certificates</h2>
+                <button class="close-modal mc-button">&times;</button>
+            </div>
+            <div class="certificates-grid">
+                <div class="certificate-item">
+                    <img src="cert/vitnasa.jpg" alt="VIT NASA Space Apps Certificate">
+                    <p>VIT NASA Space Apps</p>
+                </div>
+                <div class="certificate-item">
+                    <img src="cert/python3.jpg" alt="Python 3 Certificate">
+                    <p>Python 3</p>
+                </div>
+                <div class="certificate-item">
+                    <img src="cert/freecodecamp.jpg" alt="FreeCodeCamp Certificate">
+                    <p>FreeCodeCamp</p>
+                </div>
+                <div class="certificate-item">
+                    <img src="cert/nodrugs.jpg" alt="No Drugs Certificate">
+                    <p>No Drugs Awareness</p>
+                </div>
+                <div class="certificate-item">
+                    <img src="cert/certificate.jpg" alt="Certificate">
+                    <p>Certificate</p>
+                </div>
+                <div class="certificate-item">
+                    <img src="cert/paul1.jpg" alt="Certificate Paul 1">
+                    <p>Paul Certificate 1</p>
+                </div>
+                <div class="certificate-item">
+                    <img src="cert/Paul Anthony.png" alt="Paul Anthony Certificate">
+                    <p>Paul Anthony</p>
+                </div>
+                <div class="certificate-item">
+                    <img src="cert/Paul_Antony.jpg" alt="Paul Antony JPG Certificate">
+                    <p>Paul Antony</p>
+                </div>
+                <!-- New Certificates -->
+                <div class="certificate-item">
+                    <img src="cert/1.jpg" alt="Certificate 1">
+                    <p>Certificate 1</p>
+                </div>
+                <div class="certificate-item">
+                    <img src="cert/2.jpg" alt="Certificate 2">
+                    <p>Certificate 2</p>
+                </div>
+                <div class="certificate-item">
+                    <img src="cert/3.jpg" alt="Certificate 3">
+                    <p>Certificate 3</p>
+                </div>
+                <div class="certificate-item">
+                    <img src="cert/4.jpg" alt="Certificate 4">
+                    <p>Certificate 4</p>
+                </div>
+                <div class="certificate-item">
+                    <img src="cert/5.jpg" alt="Certificate 5">
+                    <p>Certificate 5</p>
+                </div>
+                <div class="certificate-item">
+                    <img src="cert/6.jpg" alt="Certificate 6">
+                    <p>Certificate 6</p>
+                </div>
+                <div class="certificate-item">
+                    <img src="cert/7.jpg" alt="Certificate 7">
+                    <p>Certificate 7</p>
+                </div>
+                <div class="certificate-item">
+                    <img src="cert/8.jpg" alt="Certificate 8">
+                    <p>Certificate 8</p>
+                </div>
+                <div class="certificate-item">
+                    <img src="cert/9.jpg" alt="Certificate 9">
+                    <p>Certificate 9</p>
+                </div>
+                <div class="certificate-item">
+                    <img src="cert/10.jpg" alt="Certificate 10">
+                    <p>Certificate 10</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
